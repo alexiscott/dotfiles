@@ -311,12 +311,15 @@
 
   ;; I don't need the load average and the mail indicator, so let this
   ;; be simple:
-  (setq display-time-string-forms
-        '((propertize
-           (format-time-string display-time-format now)
-           'face 'display-time-date-and-time
-           'help-echo (format-time-string "%a %b %e, %Y" now))
-          " ")))
+  ;; AIS results in and error for me.
+  ;; Invalid face reference: display-time-date-and-time [418 times]
+  ;; (setq display-time-string-forms
+  ;;       '((propertize
+  ;;          (format-time-string display-time-format now)
+  ;;          'face 'display-time-date-and-time
+  ;;          'help-echo (format-time-string "%a %b %e, %Y" now))
+  ;;         " "))
+  )
 
 ;;;; World clock (M-x world-clock)
 (use-package time
